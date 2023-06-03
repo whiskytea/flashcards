@@ -1,0 +1,279 @@
+/* ===================================== 
+   Public API Request
+======================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+/* Variables */
+
+:root {
+    --dark-grey: #220C10;
+    --white: #fdf7fa;
+    --contrast-teal: #a3dcd9;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    background: var(--white);
+}
+
+header {
+    padding: 15px 5px 5px;
+}
+
+.header-inner-container {
+    max-width: 1180px;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 1.25em;
+    color: var(--dark-grey);
+    margin-top: 35px;
+}
+
+.search-input {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--contrast-teal);
+    border-radius: 0.25rem 0 0 0.25rem ;
+    max-width: 20rem;
+    transition: .4s ease-out;
+}
+
+.search-input:active, .search-input:hover, .search-input:focus {
+    border: 1px solid var(--dark-grey);
+}
+
+.search-submit {
+    cursor: pointer;
+    height: 33px;
+    background: url("../imgs/icons8-search-64.png") center/50% no-repeat;
+    background-color: var(--contrast-teal);
+    border-radius: 0 0.25rem 0.25rem 0;
+    border: 1px solid var(--contrast-teal);
+    transition: .4s ease-out;
+}
+
+.search-submit:active, .search-submit:hover, .search-submit:focus {
+    background: url("../imgs/icons8-search-64.png") center/50% no-repeat;
+    background-color: var(--contrast-teal);
+    border: 1px solid var(--dark-grey);
+}
+
+
+/* ===================================== 
+   Gallery
+======================================== */
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px;
+}
+  
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    cursor: pointer;
+    width: 100%;
+    max-width: 360px;
+    margin: 10px 10px 20px;
+    padding: 10px;
+    background: var(--white);
+    border-radius: 0.25em;
+    border: 1px solid var(--contrast-teal);
+    transition: .4s ease-out;
+    overflow: hidden;
+}
+
+.card:focus, .card:hover, .card:active{
+    border: 1px solid var(--dark-grey);
+}
+
+.card-img {
+    width: 95px;
+    margin: 10px 15px auto 10px;
+    border-radius: 50%;
+}
+
+.card-info-container {
+    text-align: left;
+}
+
+.card-name {
+    margin: 20px auto 0;
+}
+
+.card-text {
+    font-size: 0.9em;
+    color: var(--dark-grey);
+    margin: 7px auto;
+    transition: .4s ease-out;
+}
+
+.cap {
+    text-transform: capitalize;
+}
+
+
+/* ===================================== 
+   Modal
+======================================== */
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.modal {
+    position: relative;
+    width: 95%;
+    max-width: 420px;
+    min-height: 415px;
+    margin: 10px auto auto;
+    padding-bottom: 15px;
+    background: var(--white);
+    border-radius: 0.25em;
+    border: 1px solid var(--contrast-teal);
+    transition: .4s ease-out;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: var(--white);
+    background: var(--contrast-teal);
+    border-radius: 0.25em;
+    border: 1px solid var(--contrast-teal);
+}
+
+.modal-img {
+    width: 150px;
+    margin-top: 35px;
+    border-radius: 50%;
+}
+
+.modal-name {
+    margin-bottom: 5px;
+}
+
+.modal-text {
+    color: var(--dark-grey);
+    margin: 10px;
+}
+
+.modal hr {
+    width: 75%;
+    margin: 25px auto 30px;
+    border-color: var(--contrast-teal);
+}
+
+.modal-btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 95%;
+    max-width: 420px;
+    padding: 10px 15px 15px;;
+    margin: 10px auto auto;
+    background: var(--white);
+    color: var(--dark-grey);
+}
+
+
+.modal-btn-container .btn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    padding: 0.75em 1.5em;
+    background: var(--contrast-teal);
+    border-radius: 0.35em;
+    transition: .4s ease-out;
+  }
+
+.btn{
+    border: 1px solid var(--contrast-teal);
+    color: var(--white)
+}
+
+
+
+/* ===================================== 
+   Media Queries
+======================================== */
+
+/* ===================================== 
+   Tablet
+======================================== */
+
+@media (min-width: 768px) {
+    .header-inner-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    .header-text-container {
+        text-align: left;
+    }
+
+    .search-container {
+        margin-top: 25px;
+    }
+
+    .modal {
+        margin-top: 100px;
+    }
+}
+
+
+/* ===================================== 
+   Desktop
+   Hover styles on desktop 
+======================================== */
+
+@media (min-width: 1024px) {
+
+    .card:hover {
+        background: var(--white);
+        border: 1px solid var(--dark-grey);
+    }
+
+    .card:hover .card-text {
+        color: var(--contrast-teal);
+    }
+
+    .btn:hover {
+        background: var(--dark-grey);
+        color: var(--contrast-teal);
+    }
+}

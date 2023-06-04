@@ -2,7 +2,8 @@ const express = require('express');
 
 const app = express();
 app.use(express.static('css'));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('js'));
+app.use(express.static('imgs'));
 
 app.set('view engine', 'pug');
 

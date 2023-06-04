@@ -13,7 +13,7 @@
 }
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -42,15 +42,10 @@ header h1 {
     margin-top: 35px;
 }
 
-.search-container{
-    display: flex;
-    justify-content: center;
-}
-
 .search-input {
     padding: 0.4rem 1rem;
     border: 1px solid var(--contrast-teal);
-    border-radius: 0 0.25rem 0.25rem 0;
+    border-radius: 0.25rem 0 0 0.25rem ;
     max-width: 20rem;
     transition: .4s ease-out;
 }
@@ -61,8 +56,8 @@ header h1 {
 
 .search-submit {
     cursor: pointer;
-    padding: 0.4rem 1rem;
-    background: url("icons8-search-64.png") center/80% no-repeat;
+    height: 33px;
+    background: url("icons8-search-64.png") center/50% no-repeat;
     background-color: var(--contrast-teal);
     border-radius: 0 0.25rem 0.25rem 0;
     border: 1px solid var(--contrast-teal);
@@ -76,7 +71,7 @@ header h1 {
 }
 
 
-/* ===================================== 
+/* =====================================
    Gallery
 ======================================== */
 
@@ -88,9 +83,8 @@ header h1 {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 50px;
 }
-  
+
 .card {
     display: flex;
     flex-direction: row;
@@ -138,7 +132,7 @@ header h1 {
 }
 
 
-/* ===================================== 
+/* =====================================
    Modal
 ======================================== */
 
@@ -220,7 +214,7 @@ header h1 {
     background: var(--contrast-teal);
     border-radius: 0.35em;
     transition: .4s ease-out;
-  }
+}
 
 .btn{
     border: 1px solid var(--contrast-teal);
@@ -229,11 +223,11 @@ header h1 {
 
 
 
-/* ===================================== 
+/* =====================================
    Media Queries
 ======================================== */
 
-/* ===================================== 
+/* =====================================
    Tablet
 ======================================== */
 
@@ -253,7 +247,6 @@ header h1 {
 
     .search-container {
         margin-top: 25px;
-        border: 1px black solid;
     }
 
     .modal {

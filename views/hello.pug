@@ -1,21 +1,8 @@
-doctype html
-html(lang='en')
-    head
-        title Landing Page
-        meta(charset='UTF-8')
-        link(href='normalize.css' rel='stylesheet' type='text/css')
-        link(href='styles.css' rel='stylesheet' type='text/css')
-    body
-        header
-            .header-inner-container
-                h1 API TESTING WITH NODE JS
-            .search-container
-                form(action='#' method='get')
-                    input(type='search' id='search-input' class='search-input' placeholder='Search...')
-                    input(type='submit' id='search-submit' class='search-submit' value="" )
+extends layout.pug
 
-        #gallery.gallery
-            #card
-                p test
+block content
+    #gallery.gallery
+        #card
+            p test
 
-        //script(type='text/javascript' src='script.js')
+    //script(type='text/javascript' src='script.js')

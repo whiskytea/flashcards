@@ -1,9 +1,7 @@
 extends layout.pug
 
 block content
-    h1 Welcome to Flash Cards!
-    h2 What is your name?
-
-    form(action='/' method="post")
-        input(type="text" placeholder("enter your name")
-        button(type="submit")
+    form(action='/name' method="post")
+        input(type="text" placeholder="enter your name" name="name")
+        button#submitName
+            p Your name!

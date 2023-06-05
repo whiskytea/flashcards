@@ -1,0 +1,9 @@
+extends layout.pug
+
+block content
+    h1.error= error.message
+    h2.error= error.status
+    pre=error.stack
+    form(action="/homepage" method="post")
+        button
+            p go back to the homepage

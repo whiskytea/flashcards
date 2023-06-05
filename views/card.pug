@@ -1,6 +1,9 @@
 extends layout.pug
 
 block content
-    p
-        i Hint: #{hint}
-    p this is a test
+    p Question: #{question}
+    p Hint: #{hint}
+
+    form(action='/reset' method="post")
+        button#clearCookies
+            p clear cookies

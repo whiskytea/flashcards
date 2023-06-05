@@ -1,28 +1,38 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 const app = express();
-app.use(bodyParser.urlencoded({extended: false}))
+
 app.use(express.static('css'));
 app.use(express.static('js'));
 app.use(express.static('imgs'));
 
+//custom middleware
+
+
+
 app.set('view engine', 'pug');
 
-app.get('/', (req, res)=>{
-    res.render('index');
+const mainRoutes = require("./routes");
+const cardRoutes = require("./routes/cards");
+
+
+
+app.use(mainRoutes);
+app.use('/card', cardRoutes);
+
+app.use((req,res,next) => {
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 })
 
-app.get('/hello', (req, res)=>{
-    res.render('hello');
-})
-
-app.post('/hello', (req, res)=>{
-    res.render('hello', {name: req.body.search});
-})
-
-app.get('/card', (req, res)=>{
-    res.render('card', {prompt: "Who is buried in Grant's tomb?"});
+//custom middleware
+app.use((err, req, res, next) => {
+    res.locals.error = err;
+    res.status(err.status);
+    res.render('error', err);
 })
 
 app.listen(3000, ()=>{

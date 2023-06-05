@@ -3,6 +3,6 @@ header
         .header-text-container
             h1 API TESTING WITH NODE JS
         .search-container
-            form(action='#' method='post')
-                input(type='search' id='search-input' class='search-input' placeholder='Search...')
-                input(type='submit' name="search" id='search-submit' class='search-submit' value='      ' )
+            form(action='/submit' method='post' id="search-form")
+                input(type='search' name="search" id='search-input' class='search-input' placeholder='Search...')
+                button(type='submit' id='search-submit' class='search-submit')

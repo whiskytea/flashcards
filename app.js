@@ -5,18 +5,14 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 app.use(express.static('css'));
-app.use(express.static('js'));
-app.use(express.static('imgs'));
 
 //custom middleware
-
 
 
 app.set('view engine', 'pug');
 
 const mainRoutes = require("./routes");
 const cardRoutes = require("./routes/cards");
-
 
 
 app.use(mainRoutes);

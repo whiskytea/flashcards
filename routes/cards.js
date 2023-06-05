@@ -10,6 +10,11 @@ const { cards } = data;
 //     })
 // });
 
+router.get('/', (req,res)=>{
+    res.render('card');
+})
+
+
 router.use((req,res,next) =>{
     console.log('we made it to the card router')
     next();

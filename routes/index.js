@@ -1,17 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
 
-router.use(bodyParser.urlencoded({extended: false}))
-router.use(cookieParser());
 
 router.get('/hello', (req,res)=>{
     res.render('hello');
 })
-
-
-
 
 router.get('/', (req, res)=>{
     const name = req.cookies['name'];
@@ -20,6 +13,10 @@ router.get('/', (req, res)=>{
     }else{
         res.redirect('hello');
     }
+})
+
+router.post('/home', (req,res) =>{
+    res.redirect('/');
 })
 
 router.post('/signOut', (req,res) =>{

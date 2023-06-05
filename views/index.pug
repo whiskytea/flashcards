@@ -1,4 +1,7 @@
 extends layout.pug
 
 block content
-    h1 welcome to the home page!
+    h1 Welcome #{name}
+    form(action='/signOut' method="post")
+        button(type="submit")
+            p Sign out

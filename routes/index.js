@@ -6,34 +6,26 @@ const cookieParser = require('cookie-parser');
 router.use(bodyParser.urlencoded({extended: false}))
 router.use(cookieParser());
 
-router.get('/', (req, res)=>{
-    res.render('index');
-})
-
 router.get('/hello', (req,res)=>{
     res.render('hello');
 })
 
-router.post('/homepage', (req,res)=>{
+router.post('/submit', (req, res)=>{
+    res.cookie('name', req.body);
     res.redirect('/');
 })
 
-router.post('/submit', (req, res)=>{
-    res.cookie('searchResults', req.body.search);
-    res.redirect('card');
-})
-
-router.get('/card', (req, res)=>{
-    const searchResults = req.cookies['searchResults'];
-    if (searchResults) {
-        res.render('card', {searchResults});
+router.get('/', (req, res)=>{
+    const name = req.cookies['name'];
+    if (name) {
+        res.render('/', {name});
     }else{
         res.redirect('hello');
     }
 })
 
-router.post('/reset', (req,res) =>{
-    res.clearCookie('searchResults');
+router.post('/signout', (req,res) =>{
+    res.clearCookie('name');
     res.redirect('hello');
 })
 

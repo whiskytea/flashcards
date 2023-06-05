@@ -31,6 +31,11 @@ app.use((err, req, res, next) => {
     res.render('error', err);
 })
 
+
+app.post('/homepage', (req,res)=>{
+    res.redirect('/');
+})
+
 app.listen(3000, ()=>{
     console.log('The application is running on localhost 3000');
 });

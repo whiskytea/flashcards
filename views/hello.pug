@@ -1,10 +1,9 @@
 extends layout.pug
 
 block content
-    #gallery.gallery
-        #card
-            if name
-                p something was submitted
-            p test
+    h1 Welcome to Flash Cards!
+    h2 What is your name?
 
-    //script(type='text/javascript' src='script.js')
+    form(action='/' method="post")
+        input(type="text" placeholder("enter your name")
+        button(type="submit")

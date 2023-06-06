@@ -29,6 +29,10 @@ router.post('/signOut', (req,res) =>{
     res.redirect('/hello');
 })
 
+router.post('/cards', (req,res)=>{
+    res.redirect('/card');
+})
+
 router.post('/name', (req, res)=>{
     res.cookie('name', req.body.name);
     res.redirect('/');

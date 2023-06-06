@@ -3,7 +3,12 @@ const router = express.Router();
 
 
 router.get('/hello', (req,res)=>{
-    res.render('hello');
+    const name = req.cookies['name'];
+    if (name) {
+        res.redirect('/');
+    } else {
+        res.render('hello');
+    }
 })
 
 router.get('/', (req, res)=>{
@@ -11,7 +16,7 @@ router.get('/', (req, res)=>{
     if (name) {
         res.render('index', {name});
     }else{
-        res.redirect('hello');
+        res.redirect('/hello');
     }
 })
 
@@ -21,11 +26,15 @@ router.post('/home', (req,res) =>{
 
 router.post('/signOut', (req,res) =>{
     res.clearCookie('name');
-    res.redirect('hello');
+    res.redirect('/hello');
 })
 
 router.post('/name', (req, res)=>{
     res.cookie('name', req.body.name);
+    res.redirect('/');
+})
+
+router.post('/homepage', (req,res)=>{
     res.redirect('/');
 })
 

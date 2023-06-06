@@ -4,9 +4,9 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 
-app.use(express.static('css'));
-
 //custom middleware
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(cookieParser());
 
 
 app.set('view engine', 'pug');
@@ -32,10 +32,6 @@ app.use((err, req, res, next) => {
     res.render('error', err);
 })
 
-
-app.post('/homepage', (req,res)=>{
-    res.redirect('/');
-})
 
 app.listen(3000, ()=>{
     console.log('The application is running on localhost 3000');

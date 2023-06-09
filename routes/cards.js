@@ -5,43 +5,40 @@ const { cards } = data;
 
 router.get('/:id', (req,res) => {
     const { side } = req.query;
-    const { id } = req.params;
-    const text = cards[id][side];
-    const hint = cards[id].hint;
-    const templateData = {text};
-    if (side === 'question'){
-        templateData.hint = hint;
-        templateData.otherSide = 'answer'
-        res.render('card', templateData);
-    }else if(side === 'answer'){
-        templateData.otherSide = 'question'
-        res.render('card', templateData);
+
+    if(side.toLowerCase() !== 'question' && side.toLowerCase() !== 'answer' ){
+        res.redirect('../error');
     }else{
-        res.redirect(error);
+        const { id } = req.params;
+        const text = cards[id][side];
+        const hint = cards[id].hint;
+        const templateData = {text, id};
+        if (side.toLowerCase() === 'question'){
+            templateData.hint = hint;
+            templateData.displaySide = side.toUpperCase();
+            templateData.otherSide = 'answer'
+            res.render('card', templateData);
+        }else{
+            templateData.displaySide = side.toUpperCase();
+            templateData.otherSide = 'question'
+            res.render('card', templateData);
+        }
     }
-
-
 });
 
 router.get('/', (req,res) =>{
-    res.render('card', );
+    const cardNum = cards.length();
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    const url = `/${getRandomInt(cardNum)}?side=question`;
+    res.redirect(url);
 })
-
-router.post('/answer', (req,res) => {
-    const { id } = req.params;
-    const url = '/card/' + id + '?side=answer';
-    res.redirect(url);
-});
-
-router.post('/question', (req,res) => {
-    const { id } = req.params;
-    const url = '/card/' + id + '?side=question';
-    res.redirect(url);
-});
 
 router.use((req,res,next) =>{
     console.log('we made it to the card router')
     next();
 })
+
 
 module.exports = router;

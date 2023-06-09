@@ -1,10 +1,10 @@
 extends layout.pug
 
 block content
-    h2 #{text}
+    h1 #{displaySide}
+    h3 #{text}
     if hint
         p Hint: #{hint}
 
-    form(action=`${otherSide}` method="post")
-        button
+    a(href=`${id}?side=${otherSide}`)
             p #{otherSide}

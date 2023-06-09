@@ -1,9 +1,10 @@
 extends layout.pug
 
 block content
-    h2= text
-    p Hint: #{hint}
+    h2 #{text}
+    if hint
+        p Hint: #{hint}
 
-    form(action="/home" method="post")
+    form(action=`${otherSide}` method="post")
         button
-            p go back to the homepage
+            p #{otherSide}

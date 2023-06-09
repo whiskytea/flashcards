@@ -42,5 +42,9 @@ router.post('/homepage', (req,res)=>{
     res.redirect('/');
 })
 
+router.post('/answer', (req,res) => {
+    const { id } = req.params;
+    res.redirect(`/card/${id}?side=answer`);
+});
 
 module.exports = router;

@@ -1,12 +1,9 @@
 extends layout.pug
 
 block content
-    h1 Welcome #{name}
+
 
     form(action='/cards' method="post")
         button
             p go to cards
 
-    form(action='/signOut' method="post")
-        button
-            p Sign out

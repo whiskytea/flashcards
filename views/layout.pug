@@ -4,10 +4,26 @@ html(lang="en")
         title Flash Cards
         meta(charset='UTF-8')
     body
-        include includes/header.pug
-        section#content
+        if name
+            h1 EXPRESS TESTING
+                h1 logged in as: #{name}
+            section#content
 
-            block content
+                block content
 
-        footer
-            p An app to help you study
+            footer
+                p An app to help you study
+                form(action='/signOut' method="post")
+                    button
+                        p Sign out
+
+
+        else
+            h1 EXPRESS TESTING
+                
+            section#content
+
+                block content
+
+            footer
+                p An app to help you study

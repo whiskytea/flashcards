@@ -16,11 +16,11 @@ section.flashcards
         .card-header
         h1.card-title Answer
         #content
-            h2 &lt; script &gt;
+            h2 #{text}
         .card-flip-wrap
-            a(href='href=`/card/${id}?side=question')
-                img.card-flip(src='img/flip.svg')
+            a(href=`/card/${id}?side=question`)
+                img.card-flip(src='/static/img/flip.svg')
         .card-next
-            a(href='/error')
+            a(href=`/card?id=${id}`)
                 img(src='/static/img/next.svg')
     script(src='app.js')

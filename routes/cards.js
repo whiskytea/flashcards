@@ -22,7 +22,7 @@ router.get('/:id', (req,res) => {
         }else{ //load the answer
             templateData.displaySide = side.toUpperCase();
             templateData.otherSide = 'question'
-            res.render('card-front', templateData);
+            res.render('card-back', templateData);
         }
     }
 });

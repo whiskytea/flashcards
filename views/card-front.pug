@@ -16,14 +16,14 @@ section.flashcards
         .card-header
         h1.card-title Question
         #content
-            h2 Which HTML element can contain JavaScript?
+            h2 #{text}
             p#hint
-                i Hint: It starts with an &quot;s&quot;
+                i Hint: #{hint}
         .card-flip-wrap
             a(href=`/card/${id}?side=answer`)
                 img.card-flip(src='/static/img/flip.svg')
         .card-next
-            a(href='/error')
+            a(href=`/card?id=${id}`)
                 img(src='/static/img/next.svg')
     script(src='app.js')
 .png

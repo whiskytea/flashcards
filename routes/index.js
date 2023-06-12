@@ -20,10 +20,6 @@ router.get('/', (req, res)=>{
     }
 })
 
-router.post('/home', (req,res) =>{
-    res.redirect('/');
-})
-
 router.post('/signOut', (req,res) =>{
     res.clearCookie('name');
     res.redirect('/hello');
@@ -33,7 +29,7 @@ router.post('/cards', (req,res)=>{
     res.redirect('/card');
 })
 
-router.post('/name', (req, res)=>{
+router.post('/home', (req, res)=>{
     res.cookie('name', req.body.name);
     res.redirect('/');
 })

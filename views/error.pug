@@ -6,20 +6,10 @@ header
     img(src='/static/img/logo.png')
     p An app to help you study
 section.desk
-    h1 Not Found - Status: 404
+    h1= `${error.message} - Status: ${error.status}`
     img.desk-items(src='/static/img/desk.svg')
     a.button-primary-small(href='/') Go Home
     .paper
-        pre.stack-trace.
-            \nError: Not Found
-                        at app.use (/Users/joel/Documents/courses/express-basics/quizzmaster/app.js:20:15)
-                        at Layer.handle [as handle_request] (/Users/joel/Documents/courses/express-basics/quizzmaster/node_modules/express/lib/router/layer.js:95:5)
-                        at trim_prefix (/Users/joel/Documents/courses/express-basics/quizzmaster/node_modules/express/lib/router/index.js:312:13)
-                        at /Users/joel/Documents/courses/express-basics/quizzmaster/node_modules/express/lib/router/index.js:280:7
-                        at Function.process_params (/Users/joel/Documents/courses/express-basics/quizzmaster/node_modules/express/lib/router/index.js:330:12)
-                        at next (/Users/joel/Documents/courses/express-basics/quizzmaster/node_modules/express/lib/router/index.js:271:10)
-                        at /Users/joel/Documents/courses/express-basics/quizzmaster/node_modules/express/lib/router/index.js:618:15
-                        at next (/Users/joel/Documents/courses/express-basics/quizzmaster/node_modules/express/lib/router/index.js:256:14)
-                        at Function.handle (/Users/joel/Documents/courses/express-basics/quizzmaster/node_modules/express/lib/router/index.js:176:3)
-                        at router (/Users/joel/Documents/courses/express-basics/quizzmaster/node_modules/express/lib/router/index.js:46:12)
+        pre.stack-trace= error.stack
+
     .tear

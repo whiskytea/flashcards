@@ -29,7 +29,8 @@ app.use((req,res,next) => {
 //custom middleware
 app.use((err, req, res, next) => {
     res.locals.error = err;
-    res.status(err.status);
+    const status = err.status || 500;
+    res.status(status);
     res.render('error', err);
 })
 

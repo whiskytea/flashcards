@@ -17,6 +17,7 @@ const cardRoutes = require("./routes/cards");
 
 app.use(mainRoutes);
 app.use('/card', cardRoutes);
+app.use('/static', express.static('public'));
 
 
 app.use((req,res,next) => {

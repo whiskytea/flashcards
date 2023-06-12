@@ -18,11 +18,11 @@ router.get('/:id', (req,res) => {
             templateData.hint = hint;
             templateData.displaySide = side.toUpperCase();
             templateData.otherSide = 'answer'
-            res.render('card', templateData);
+            res.render('card-front', templateData);
         }else{ //load the answer
             templateData.displaySide = side.toUpperCase();
             templateData.otherSide = 'question'
-            res.render('card', templateData);
+            res.render('card-front', templateData);
         }
     }
 });

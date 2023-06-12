@@ -1,7 +1,15 @@
-extends layout.pug
-
-block content
-    form(action='/name' method="post")
-        input(type="text" placeholder="enter your name" name="name")
-        button#submitName
-            p Sign in
+doctype html
+head
+    title Flash Cards
+    link(rel='stylesheet' href='/static/stylesheets/style.css')
+header
+    img(src='/static/img/logo.png')
+    p An app to help you study
+section.namecard
+    .namecard-hello
+        p.namecard-greeting Hello, student!
+    form.namecard-form(action='/' method='post')
+        label.namecard-prompt
+            | Please enter your name:
+        input.namecard-name(type='text' name='username')
+        button.namecard-submit(type='submit') Submit

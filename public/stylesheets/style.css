@@ -210,7 +210,7 @@ input {
 }
 
 .card-question div:first-of-type {
-  background-image: url("../img/content-header-question.png");
+  background-image: url("../static/img/content-header-question.png");
   background-size: contain;
 }
 
@@ -219,7 +219,7 @@ input {
 }
 
 .card-answer div:first-of-type {
-  background-image: url("../img/content-header-answer.png");
+  background-image: url("../static/img/content-header-answer.png");
   background-size: contain;
 }
 
@@ -337,7 +337,7 @@ input {
 }
 
 .tear {
-  background-image: url("../img/tear.svg");
+  background-image: url("../static/img/tear.svg");
   background-repeat: repeat-x;
   width: 100%;
   height: 24px;

@@ -11,5 +11,16 @@ section.namecard
         form.namecard-exit(action='/signOut' method='POST')
             button(type='submit')
                 img(src='/static/img/close.svg')
-    h1.namecard-prompt Let&apos;s get started
-    a.namecard-submit(href='/card') Begin!
+section.flashcards
+    .card.card-answer
+        .card-header
+        h1.card-title Answer
+        #content
+            h2 &lt; script &gt;
+        .card-flip-wrap
+            a(href='href=`/card/${id}?side=question')
+                img.card-flip(src='img/flip.svg')
+        .card-next
+            a(href='/error')
+                img(src='/static/img/next.svg')
+    script(src='app.js')
